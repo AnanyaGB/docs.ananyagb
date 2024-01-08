@@ -16,9 +16,9 @@ export default function Custom404() {
               </div>
               <div className="mt-8 pl-8 md:pl-16 text-lg md:text-2xl">
                 <ol className="list-decimal">
-                  <li>You aren't cool enough to visit this page. Or,</li>
+                  <li>You aren&apos;t cool enough to visit this page. Or,</li>
                   <li>
-                    This page doesn't exist ...{" "}
+                    This page doesn&apos;t exist ...{" "}
                     <i className="italic">like your social life</i>.
                   </li>
                 </ol>
