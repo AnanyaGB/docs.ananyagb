@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Custom404() {
   return (
     <div className="not-found">
-      <div className="max-w-5xl mx-auto bg-gradient-to-b from-transparent to-white">
+      <div className="max-w-5xl mx-auto bg-gradient-to-b from-transparent to-white lg:bg-transparent">
         <Container>
           <div className="h-[80vh] flex items-center">
             <div>
