@@ -104,7 +104,19 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               {content}
             </Markdown>
           </div>
-          <div className="py-12"></div>
+          <div className="py-12">
+            <Link
+              href={`https://github.com/AnanyaGB/docs.ananyagb/blob/master/_data/docs/${data.id}.md`}
+              target="_blank"
+            >
+              <div className="flex items-center text-slate-500 gap-2 group">
+                <i className="bi bi-github text-2xl" />
+                <div className="group-hover:underline">
+                  Edit this page on GitHub
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </Container>
