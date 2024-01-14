@@ -55,3 +55,15 @@
   -o-animation-timing-function: linear;
   animation-timing-function: linear;
 }
+
+.katex-html {
+  @apply max-w-full overflow-x-scroll md:overflow-x-hidden;
+}
+
+.prose code::after,
+.prose code::before {
+  @apply content-none;
+}
+.prose code {
+  @apply text-base px-1 py-px bg-slate-100 rounded text-slate-600 font-normal border;
+}

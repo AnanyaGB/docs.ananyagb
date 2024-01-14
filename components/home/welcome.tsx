@@ -9,7 +9,7 @@ export default function Welcome() {
             Finding the right resource, now made easier.
           </div>
         </div>
-        <div className="mt-8 max-w-lg text-lg lg:text-2xl outline-none">
+        <div className="mt-8 font-light max-w-lg text-lg lg:text-2xl outline-none">
           All of my resources, papers, and projects are now open-source, and is
           governed by the MIT License. This is a centralized portal, to access
           all my public data. Happy surfing!
