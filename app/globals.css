@@ -57,7 +57,7 @@
 }
 
 .katex-html {
-  @apply max-w-full overflow-x-scroll md:overflow-x-hidden;
+  @apply max-w-full overflow-x-scroll md:overflow-x-hidden overflow-y-hidden;
 }
 
 .prose code::after,
