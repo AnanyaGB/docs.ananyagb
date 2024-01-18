@@ -74,11 +74,11 @@ export default async function Docs({ params }: { params: { slug: string } }) {
             {data.parent}
           </div>
           {DATA.map(
-            (item) =>
+            (item, index: any) =>
               item.parent === data.parent &&
               item.type === data.type &&
               item.subject === data.subject && (
-                <Link href={`/docs/${item.id}`}>
+                <Link href={`/docs/${item.id}`} key={index}>
                   <div
                     className={`${
                       item.id === data.id
