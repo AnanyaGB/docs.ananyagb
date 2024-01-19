@@ -24,4 +24,11 @@ export const DATA: data[] = [
     id: 2401151836,
     archived: false,
   },
+  {
+    title: "Boolean Algebra",
+parent: "Digital Circuits",
+subject: "Computer Science",
+type: "Semester",
+id: 2401191303,
+  }
 ];
