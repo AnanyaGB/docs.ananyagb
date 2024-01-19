@@ -17,18 +17,26 @@ export default function TableCard({
   ...rest
 }: card) {
   return (
-    <div className="border-b last-of-type:border-none" {...rest}>
-      <Link href={`docs/${id}`}>
-        <div className="flex bg-white hover:bg-slate-50 transition-all items-center px-4 py-2 text-slate-700 group">
-          <div className="flex-[2] flex-shrink-0 group-hover:text-blue-500">
-            {title}
-          </div>
-          <div className="flex-1 flex-shrink-0 text-sm">{parent}</div>
-          <div className="flex-1 flex-shrink-0 text-sm">{subject}</div>
-          <div className="flex-1 flex-shrink-0 text-sm">{type}</div>
-          <div className="flex-1 flex-shrink-0 text-sm">{id}</div>
+    <Link href={`/docs/${id}`}>
+      <div className="rounded-xl overflow-hidden hover:shadow-lg transition-all bg-white group hover:border-blue-500 w-full border ">
+        <div className="px-4 py-4 border-b group-hover:border-blue-500">
+          <div className="text-xl font-bold">{title}</div>
         </div>
-      </Link>
-    </div>
+        <div className="px-4 py-4 text-sm flex flex-col gap-1 border-b group-hover:border-blue-500">
+          <div className="bg-slate-50 max-w-fit px-2 py-1 rounded-md">
+            {parent}
+          </div>
+          <div className="bg-slate-50 max-w-fit px-2 py-1 rounded-md">
+            {subject}
+          </div>
+          <div className="bg-slate-50 max-w-fit px-2 py-1 rounded-md">
+            {type}
+          </div>
+        </div>
+        <div className="px-4 py-2 font-mono bg-gradient-to-r from-indigo-500 to-purple-300 text-white">
+          {id}
+        </div>
+      </div>
+    </Link>
   );
 }

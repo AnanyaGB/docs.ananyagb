@@ -6,6 +6,11 @@ import Logo from "./logo";
 export default function Navbar() {
   const navlinks: { text: string; uri: string; blank: boolean }[] = [
     {
+      text: "All Data",
+      uri: "/all",
+      blank: false,
+    },
+    {
       text: "Semesters",
       uri: "/semesters",
       blank: false,
