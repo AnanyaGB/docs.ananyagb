@@ -5,7 +5,7 @@ export default function Welcome() {
     <div className="h-[70vh] md:h-screen bg-gradient-to-br from-transparent to-slate-100 flex items-center">
       <Container>
         <div>
-          <div className="text-6xl md:text-9xl outline-none tracking-tighter max-w-7xl">
+          <div className="text-6xl font-light md:text-9xl outline-none tracking-tighter max-w-7xl">
             Finding the right resource, now made easier.
           </div>
         </div>
