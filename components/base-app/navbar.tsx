@@ -48,7 +48,7 @@ export default function Navbar() {
               <Link href="/">
                 <Logo />
               </Link>
-              <div className="items-center hidden md:flex">
+              <div className="items-center hidden">
                 {navlinks.map((item, index: any) => (
                   <NavLinks uri={item.uri} blank={item.blank} key={index}>
                     {item.text}

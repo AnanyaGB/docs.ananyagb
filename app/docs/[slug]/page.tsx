@@ -136,7 +136,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
-          <div className="prose max-w-full prose-h1:mt-20 prose-img:mx-auto">
+          <div className="prose prose-headings:font-bold max-w-full prose-h1:mt-20 prose-img:mx-auto">
             <Markdown
               remarkPlugins={[remarkGfm, remarkMath]}
               rehypePlugins={[rehypeKatex]}
