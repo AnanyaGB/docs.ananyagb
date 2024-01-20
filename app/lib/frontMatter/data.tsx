@@ -30,6 +30,14 @@ export const DATA: data[] = [
     subject: "Computer Science",
     type: "Semester",
     id: 2401191303,
-    archived: false
-  }
+    archived: false,
+  },
+  {
+    title: "Functions",
+    parent: "Discrete Mathematics",
+    subject: "Computer Science",
+    type: "Semester",
+    id: 2401201852,
+    archived: false,
+  },
 ];

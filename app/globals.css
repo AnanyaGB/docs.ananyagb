@@ -67,3 +67,7 @@
 .prose code {
   @apply text-base px-1 py-px bg-slate-100 rounded text-slate-600 font-normal border;
 }
+
+.prose table {
+  @apply !w-full !overflow-scroll;
+}

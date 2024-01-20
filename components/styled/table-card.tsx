@@ -33,7 +33,7 @@ export default function TableCard({
             {type}
           </div>
         </div>
-        <div className="px-4 py-2 font-mono bg-gradient-to-r from-indigo-500 to-purple-300 text-white">
+        <div className="px-4 py-2 font-mono text-black group-hover:text-white group-hover:bg-gradient-to-r from-indigo-500 to-purple-400">
           {id}
         </div>
       </div>

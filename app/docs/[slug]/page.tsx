@@ -66,13 +66,20 @@ const Feilds = ({ tag, data }: { tag: string; data: string | number }) => {
 export default async function Docs({ params }: { params: { slug: string } }) {
   const { data, content } = await getData(params.slug);
 
+  const regXHeader = /(?<flag>#{1,6})\s+(?<content>.+)/g;
+
+  const headings = Array.from(content.matchAll(regXHeader)).map(
+    ({ groups: { flag, content } }: any) => ({
+      heading: `h${flag.length}`,
+      content,
+    })
+  );
+
   return (
     <Container>
       <div className="flex relative flex-col md:flex-row py-12 gap-12">
         <div className="flex-1 md:sticky top-32 self-start flex flex-col">
-          <div className="mb-2 text-lg tracking-tight font-medium">
-            {data.parent}
-          </div>
+          <div className="mb-2 text-lg font-medium">{data.parent}</div>
           {DATA.map(
             (item, index: any) =>
               item.parent === data.parent &&
@@ -92,31 +99,50 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               )
           )}
         </div>
-        <div className="flex-1 md:sticky top-32 self-start flex flex-col">
-          <div className="text-lg font-medium tracking-tight">
-            Table of contents
+        <div className="flex-1 md:sticky top-32 self-start flex flex-col h-[70vh]">
+          <div className="text-lg font-medium">Table of contents</div>
+          <div className="flex flex-col gap-2 text-sm mt-6">
+            {headings?.map((item: any, index: any) =>
+              item.heading === "h1" ? (
+                <div
+                  className="hover:text-blue-500 cursor-pointer max-w-fit"
+                  key="index"
+                >
+                  {item.content.replace(":", "")}
+                </div>
+              ) : (
+                item.heading === "h2" && (
+                  <div
+                    className="ml-4 hover:text-blue-500 cursor-pointer max-w-fit"
+                    key="index"
+                  >
+                    {item.content.replace(":", "")}
+                  </div>
+                )
+              )
+            )}
           </div>
           <Link
             href={`https://github.com/AnanyaGB/docs.ananyagb/blob/master/_data/docs/${data.id}.md`}
             target="_blank"
           >
-            <div className="flex items-center text-slate-500 gap-2 group">
+            <div className="flex mt-12 items-center text-slate-500 gap-2 group">
               <i className="bi bi-github text-2xl" />
-              <div className="group-hover:underline">
+              <div className="group-hover:underline text-sm">
                 Edit this page on GitHub
               </div>
             </div>
           </Link>
         </div>
-        <div className="flex-[3]">
+        <div className="flex-[3] relative">
           <div className="border-b pb-8 mb-8">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="col-span-3">
-                <div className="text-6xl font-semibold tracking-tighter">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="md:col-span-3">
+                <div className="text-6xl font-bold tracking-tighter">
                   {data.title}
                 </div>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <Feilds tag="Parent" data={data.parent} />
               </div>
               <div>
@@ -136,7 +162,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
-          <div className="prose prose-headings:font-bold max-w-full prose-h1:mt-20 prose-img:mx-auto">
+          <div className="prose max-w-full overflow-x-hidden prose-h1:mt-20 prose-img:mx-auto relative">
             <Markdown
               remarkPlugins={[remarkGfm, remarkMath]}
               rehypePlugins={[rehypeKatex]}

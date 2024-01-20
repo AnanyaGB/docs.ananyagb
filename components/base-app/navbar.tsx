@@ -42,7 +42,16 @@ export default function Navbar() {
       <div className="text-sm bg-gradient-to-r from-sky-400 to-indigo-400 text-white">
         <Container>
           <div className="min-h-8 px-4 py-4 md:py-0 justify-center flex items-center">
-            This site is under construction, and will be up and running shortly.
+            <div>
+              Want to edit or add documents? Go to{" "}
+              <Link
+                href="https://github.com/AnanyaGB/docs.ananyagb"
+                target="_blank"
+              >
+                <span className="underline">GitHub</span>
+              </Link>{" "}
+              to access code.
+            </div>
           </div>
         </Container>
       </div>

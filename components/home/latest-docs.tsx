@@ -3,6 +3,8 @@ import Container from "../styled/container";
 import TableCard from "../styled/table-card";
 
 export default function LatestDocs() {
+  const arr = DATA.reverse();
+
   return (
     <Container>
       <div className="py-12">
@@ -10,7 +12,7 @@ export default function LatestDocs() {
           Recently added
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-8 gap-8">
-          {DATA.map((item, index: any) => (
+          {arr.map((item, index: any) => (
             <TableCard
               title={item.title}
               key={index}
