@@ -13,6 +13,8 @@
     "@types/node": "20.10.7",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
+    "@vercel/analytics": "^1.1.2",
+    "@vercel/speed-insights": "^1.0.8",
     "autoprefixer": "10.4.16",
     "bootstrap-icons": "^1.11.3",
     "eslint": "8.56.0",
