@@ -75,12 +75,16 @@ export default async function Docs({ params }: { params: { slug: string } }) {
     })
   );
 
+  let arr = DATA.sort((a, b) => {
+    return a.id > b.id ? 1 : -1;
+  });
+
   return (
     <Container>
       <div className="flex relative flex-col md:flex-row py-12 gap-12">
         <div className="flex-1 md:sticky top-32 self-start flex flex-col">
           <div className="mb-2 text-lg font-medium">{data.parent}</div>
-          {DATA.map(
+          {arr.map(
             (item, index: any) =>
               item.parent === data.parent &&
               item.type === data.type &&

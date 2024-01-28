@@ -3,7 +3,9 @@ import Container from "../styled/container";
 import TableCard from "../styled/table-card";
 
 export default function LatestDocs() {
-  const arr = DATA.reverse();
+  let arr = DATA.sort((a, b) => {
+    return a.id > b.id ? -1 : 1;
+  });
 
   return (
     <Container>
