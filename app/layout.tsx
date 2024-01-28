@@ -23,7 +23,7 @@ export default function RootLayout({
         <Layout>{children}</Layout>
         <Analytics />
         <SpeedInsights />
-      </body>
+      </body> 
     </html>
   );
 }

@@ -40,4 +40,12 @@ export const DATA: data[] = [
     id: 2401201852,
     archived: false,
   },
+  {
+    title: "Propositional Logic",
+    parent: "Discrete Mathematics",
+    subject: "Computer Science",
+    type: "Semester",
+    id: 2401281130,
+    archived: false,
+  },
 ];
