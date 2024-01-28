@@ -10,6 +10,13 @@ import remarkMath from "remark-math";
 import "katex/dist/katex.min.css";
 import Link from "next/link";
 import { DATA } from "@/app/lib/frontMatter/data";
+import CustomLink from "@/components/markdown/customLink";
+import {
+  Headings1,
+  Headings2,
+  generateSlug,
+} from "@/components/markdown/headings";
+import TOC from "@/components/slug/toc";
 
 // type data = {
 //   data: {
@@ -64,6 +71,12 @@ const Feilds = ({ tag, data }: { tag: string; data: string | number }) => {
 };
 
 export default async function Docs({ params }: { params: { slug: string } }) {
+  const components: any = {
+    h1: Headings1,
+    h2: Headings2,
+    a: CustomLink,
+  };
+
   const { data, content } = await getData(params.slug);
 
   const regXHeader = /(?<flag>#{1,6})\s+(?<content>.+)/g;
@@ -103,25 +116,40 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               )
           )}
         </div>
-        <div className="flex-1 md:sticky top-32 self-start flex flex-col h-[70vh]">
+        <TOC>
+          {headings?.map((item: any, index: any) =>
+            item.heading === "h1" ? (
+              <Link href={`#${generateSlug(item.content)}`} key="index">
+                <div className="hover:text-blue-500 py-2 px-4 cursor-pointer max-w-fit">
+                  {item.content.replace(":", "")}
+                </div>
+              </Link>
+            ) : (
+              item.heading === "h2" && (
+                <Link href={`#${generateSlug(item.content)}`} key={index}>
+                  <div>{item.content.replace(":", "")}</div>
+                </Link>
+              )
+            )
+          )}
+        </TOC>
+        <div className="flex-1 md:sticky top-32 self-start hidden md:flex flex-col h-[70vh]">
           <div className="text-lg font-medium">Table of contents</div>
           <div className="flex flex-col gap-2 text-sm mt-6">
             {headings?.map((item: any, index: any) =>
               item.heading === "h1" ? (
-                <div
-                  className="hover:text-blue-500 cursor-pointer max-w-fit"
-                  key="index"
-                >
-                  {item.content.replace(":", "")}
-                </div>
-              ) : (
-                item.heading === "h2" && (
-                  <div
-                    className="ml-4 hover:text-blue-500 cursor-pointer max-w-fit"
-                    key="index"
-                  >
+                <Link href={`#${generateSlug(item.content)}`} key="index">
+                  <div className="hover:text-blue-500 cursor-pointer max-w-fit">
                     {item.content.replace(":", "")}
                   </div>
+                </Link>
+              ) : (
+                item.heading === "h2" && (
+                  <Link href={`#${generateSlug(item.content)}`} key="index">
+                    <div className="ml-4 hover:text-blue-500 cursor-pointer max-w-fit">
+                      {item.content.replace(":", "")}
+                    </div>
+                  </Link>
                 )
               )
             )}
@@ -142,7 +170,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
           <div className="border-b pb-8 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="md:col-span-3">
-                <div className="text-6xl font-bold tracking-tighter">
+                <div className="text-5xl md:text-6xl font-black tracking-tighter">
                   {data.title}
                 </div>
               </div>
@@ -170,6 +198,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
             <Markdown
               remarkPlugins={[remarkGfm, remarkMath]}
               rehypePlugins={[rehypeKatex]}
+              components={components}
             >
               {content}
             </Markdown>

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+  /* scroll-snap-type: mandatory; */
+  scroll-padding-top: 5rem;
+}
+
 @-webkit-keyframes bg-scrolling-reverse {
   100% {
     background-position: 50px 50px;
@@ -66,8 +72,4 @@
 }
 .prose code {
   @apply text-base px-1 py-px bg-slate-100 rounded text-slate-600 font-normal border;
-}
-
-.prose table {
-  @apply !w-full !overflow-scroll;
 }
