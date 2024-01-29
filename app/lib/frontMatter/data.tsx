@@ -48,4 +48,12 @@ export const DATA: data[] = [
     id: 2401281130,
     archived: false,
   },
+  {
+    title: "Complex Numbers",
+    parent: "Classical Algebra",
+    subject: "Mathematics",
+    type: "Semester",
+    id: 2401291724,
+    archived: false,
+  },
 ];
