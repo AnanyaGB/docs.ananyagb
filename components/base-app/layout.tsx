@@ -8,7 +8,7 @@ export default function Layout({ children }: layout) {
   return (
     <div className="relative">
       <Navbar />
-      <div className="min-h-screen">{children}</div>
+      <div className="min-h-[80vh]">{children}</div>
     </div>
   );
 }

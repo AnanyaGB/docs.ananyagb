@@ -39,22 +39,6 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="text-sm bg-gradient-to-r from-sky-400 to-indigo-400 text-white">
-        <Container>
-          <div className="min-h-8 px-4 py-4 md:py-0 justify-center flex items-center">
-            <div>
-              Want to edit or add documents? Go to{" "}
-              <Link
-                href="https://github.com/AnanyaGB/docs.ananyagb"
-                target="_blank"
-              >
-                <span className="underline">GitHub</span>
-              </Link>{" "}
-              to access code.
-            </div>
-          </div>
-        </Container>
-      </div>
       <div className="bg-white bg-opacity-90 backdrop-blur-md sticky top-0 z-50">
         <Container>
           <div className="h-16 flex items-center justify-between">
