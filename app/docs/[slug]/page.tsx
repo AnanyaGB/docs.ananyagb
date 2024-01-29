@@ -120,14 +120,16 @@ export default async function Docs({ params }: { params: { slug: string } }) {
           {headings?.map((item: any, index: any) =>
             item.heading === "h1" ? (
               <Link href={`#${generateSlug(item.content)}`} key="index">
-                <div className="hover:text-blue-500 py-2 px-4 cursor-pointer max-w-fit">
+                <div className="hover:text-blue-500 border-t py-2 px-4 cursor-pointer">
                   {item.content.replace(":", "")}
                 </div>
               </Link>
             ) : (
               item.heading === "h2" && (
                 <Link href={`#${generateSlug(item.content)}`} key={index}>
-                  <div>{item.content.replace(":", "")}</div>
+                  <div className="hover:text-blue-500 py-2 px-4 pl-6">
+                    {item.content.replace(":", "")}
+                  </div>
                 </Link>
               )
             )

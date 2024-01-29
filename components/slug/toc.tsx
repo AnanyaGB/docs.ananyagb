@@ -14,7 +14,7 @@ export default function TOC({ children }: { children: React.ReactNode }) {
         <i className={`bi bi-chevron-${showTOC ? "up" : "down"}`} />
       </div>
       {showTOC && (
-        <div className="pt-0 flex border-t flex-col divide-y max-h-[50vh] overflow-y-scroll text-sm">
+        <div className="pt-0 flex flex-col overflow-y-scroll text-sm">
           {children}
         </div>
       )}
