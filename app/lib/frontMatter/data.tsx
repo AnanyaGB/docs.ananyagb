@@ -56,4 +56,12 @@ export const DATA: data[] = [
     id: 2401291724,
     archived: false,
   },
+  {
+    title: "Number Systems",
+    parent: "Digital Circuits",
+    subject: "Computer Science",
+    type: "Semester",
+    id: 2402041218,
+    archived: false,
+  },
 ];

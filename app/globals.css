@@ -71,5 +71,11 @@ html {
   @apply content-none;
 }
 .prose code {
-  @apply text-base px-1 py-px bg-slate-100 rounded text-slate-600 font-normal border;
+  @apply text-base px-1 py-px bg-slate-100 rounded text-slate-600 border;
+}
+.prose pre {
+  @apply bg-slate-100 border;
+}
+.prose pre code {
+  @apply bg-transparent border-none p-0;
 }
