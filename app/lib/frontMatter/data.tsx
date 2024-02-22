@@ -25,14 +25,6 @@ export const DATA: data[] = [
     archived: false,
   },
   {
-    title: "Boolean Algebra",
-    parent: "Digital Circuits",
-    subject: "Computer Science",
-    type: "Semester",
-    id: 2401191303,
-    archived: false,
-  },
-  {
     title: "Functions",
     parent: "Discrete Mathematics",
     subject: "Computer Science",
@@ -62,6 +54,14 @@ export const DATA: data[] = [
     subject: "Computer Science",
     type: "Semester",
     id: 2402041218,
+    archived: false,
+  },
+  {
+    title: "Boolean Algebra",
+    parent: "Digital Circuits",
+    subject: "Computer Science",
+    type: "Semester",
+    id: 2402181637,
     archived: false,
   },
 ];
