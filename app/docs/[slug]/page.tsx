@@ -7,6 +7,7 @@ import Markdown from "react-markdown";
 import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import rehypeRaw from "rehype-raw";
 import "katex/dist/katex.min.css";
 import Link from "next/link";
 import { DATA } from "@/app/lib/frontMatter/data";
@@ -199,7 +200,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
           <div className="prose max-w-full overflow-x-hidden prose-h1:mt-20 prose-img:mx-auto relative">
             <Markdown
               remarkPlugins={[remarkGfm, remarkMath]}
-              rehypePlugins={[rehypeKatex]}
+              rehypePlugins={[rehypeKatex, rehypeRaw]}
               components={components}
             >
               {content}
