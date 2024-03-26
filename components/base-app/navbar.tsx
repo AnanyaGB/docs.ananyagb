@@ -55,6 +55,9 @@ export default function Navbar() {
               </div>
             </div>
             <div className="flex items-center gap-2">
+              <NavLinks uri="/docs/all">All docs</NavLinks>
+            </div>
+            <div className="flex items-center gap-2">
               <NavLinks uri="https://ananyagb.in" blank>
                 Base Site
               </NavLinks>

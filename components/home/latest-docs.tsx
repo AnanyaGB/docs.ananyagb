@@ -1,11 +1,13 @@
 import { DATA } from "@/app/lib/frontMatter/data";
 import Container from "../styled/container";
 import TableCard from "../styled/table-card";
+import NavLinks from "../styled/navLinks";
+import Link from "next/link";
 
 export default function LatestDocs() {
   let arr = DATA.sort((a, b) => {
     return a.id > b.id ? -1 : 1;
-  });
+  }).slice(DATA.length - 9, DATA.length - 5);
 
   return (
     <Container>
@@ -24,6 +26,15 @@ export default function LatestDocs() {
               id={item.id}
             />
           ))}
+        </div>
+        <div className="mt-8">
+          <div className="mx-auto max-w-fit">
+            <Link href={"/docs/all"}>
+              <button className="px-4 py-2 rounded-md bg-sky-50 hover:bg-sky-100 transition-all text-sky-500">
+                View all docs
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </Container>
