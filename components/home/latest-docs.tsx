@@ -1,13 +1,12 @@
 import { DATA } from "@/app/lib/frontMatter/data";
 import Container from "../styled/container";
 import TableCard from "../styled/table-card";
-import NavLinks from "../styled/navLinks";
 import Link from "next/link";
 
 export default function LatestDocs() {
   let arr = DATA.sort((a, b) => {
     return a.id > b.id ? -1 : 1;
-  }).slice(DATA.length - 9, DATA.length - 5);
+  }).slice(DATA.length - DATA.length, DATA.length - (DATA.length - 4));
 
   return (
     <Container>

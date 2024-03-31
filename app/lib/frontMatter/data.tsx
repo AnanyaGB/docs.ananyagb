@@ -88,4 +88,12 @@ export const DATA: data[] = [
     id: 2403280944,
     archived: false,
   },
+  {
+    title: "Graph Theory",
+    parent: "Discrete Mathematics",
+    subject: "Computer Science",
+    type: "Semester",
+    id: 2403310821,
+    archived: false,
+  },
 ];
