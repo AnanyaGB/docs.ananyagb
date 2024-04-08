@@ -175,32 +175,34 @@ export default async function Docs({ params }: { params: { slug: string } }) {
             </Markdown>
           </div>
         </div>
-        <div className="flex-1 md:sticky top-32 self-start hidden md:flex flex-col h-[70vh]">
-          <div className="text-lg font-medium">Table of contents</div>
-          <div className="flex flex-col gap-0 text-slate-600 mt-6 pl-4 border-l-2">
-            {headings?.map((item: any, index: any) =>
-              item.heading === "h1" ? (
-                <Link href={`#${generateSlug(item.content)}`} key="index">
-                  <div className="hover:text-blue-500 py-1 cursor-pointer max-w-fit">
-                    {item.content.replace(":", "")}
-                  </div>
-                </Link>
-              ) : (
-                item.heading === "h2" && (
+        <div className="flex-1 md:sticky top-32 self-start">
+          <div className="text-lg font-medium mb-2">Table of contents</div>
+          <div className="hidden md:flex flex-col max-h-[65vh] overflow-y-scroll pr-2">
+            <div className="flex flex-col gap-0 text-slate-600 mt-6 pl-4 border-l-2">
+              {headings?.map((item: any, index: any) =>
+                item.heading === "h1" ? (
                   <Link href={`#${generateSlug(item.content)}`} key="index">
-                    <div className="ml-4 pl-4 border-l hover:text-blue-500 cursor-pointer max-w-fit text-sm py-1">
+                    <div className="hover:text-blue-500 py-1 cursor-pointer max-w-fit">
                       {item.content.replace(":", "")}
                     </div>
                   </Link>
+                ) : (
+                  item.heading === "h2" && (
+                    <Link href={`#${generateSlug(item.content)}`} key="index">
+                      <div className="ml-4 pl-4 border-l hover:text-blue-500 cursor-pointer max-w-fit text-sm py-1">
+                        {item.content.replace(":", "")}
+                      </div>
+                    </Link>
+                  )
                 )
-              )
-            )}
+              )}
+            </div>
           </div>
           <Link
             href={`https://github.com/AnanyaGB/docs.ananyagb/blob/master/_data/docs/${data.id}.md`}
             target="_blank"
           >
-            <div className="flex mt-12 items-center text-slate-500 gap-2 group">
+            <div className="flex mt-6 items-center text-slate-500 gap-2 group">
               <i className="bi bi-github text-2xl" />
               <div className="group-hover:underline">
                 Edit this page on GitHub
