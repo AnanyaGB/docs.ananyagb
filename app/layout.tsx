@@ -21,6 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7121071971076944"
+        crossorigin="anonymous"
+      ></script>
       <body className={`${GeistSans.className} ${GeistMono.variable}`}>
         <Suspense fallback={<Loading />}>
           <Layout>{children}</Layout>
