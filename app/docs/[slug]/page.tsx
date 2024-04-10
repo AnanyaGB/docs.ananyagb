@@ -96,7 +96,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
   return (
     <Container>
       <div className="flex relative flex-col md:flex-row py-12 gap-12">
-        <div className="flex-1 md:sticky top-32 self-start flex flex-col">
+        <div className="flex-1 flex-shrink-0 md:sticky top-32 self-start flex flex-col">
           <div className="mb-2 text-lg font-medium">{data.parent}</div>
           {arr.map(
             (item, index: any) =>
@@ -165,7 +165,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
-          <div className="prose max-w-full overflow-x-hidden prose-h1:mt-20 prose-img:mx-auto relative">
+          <div className="prose max-w-screen-sm overflow-x-hidden prose-h1:mt-20 prose-img:mx-auto relative">
             <Markdown
               remarkPlugins={[remarkGfm, remarkMath]}
               rehypePlugins={[rehypeKatex, rehypeRaw]}
@@ -175,7 +175,7 @@ export default async function Docs({ params }: { params: { slug: string } }) {
             </Markdown>
           </div>
         </div>
-        <div className="flex-1 md:sticky top-32 self-start">
+        <div className="flex-1 flex-shrink-0 md:sticky top-32 self-start">
           <div className="text-lg font-medium mb-2">Table of contents</div>
           <div className="hidden md:flex flex-col max-h-[65vh] overflow-y-scroll pr-2">
             <div className="flex flex-col gap-0 text-slate-600 mt-6 pl-4 border-l-2">
