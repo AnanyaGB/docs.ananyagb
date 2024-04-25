@@ -79,7 +79,7 @@ html {
   @apply bg-transparent border-none p-0;
 }
 .prose blockquote {
-  @apply border before:bg-slate-50 rounded-lg font-normal not-italic before:content-["Note"] before:block before:px-4 before:py-2 p-0 bg-white before:border-b before:text-lg before:font-bold;
+  @apply border before:bg-slate-50 rounded-lg font-normal not-italic before:content-none before:block before:px-4 before:py-2 p-0 bg-white before:border-b before:text-lg before:font-bold;
 }
 .prose blockquote p {
   @apply after:content-none before:content-none px-4;
